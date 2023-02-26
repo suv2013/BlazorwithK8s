@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: githubaction-aks-blazor
+spec:
+  selector:
+    matchLabels:
+      app: githubaction-aks-blazor
+  template:
+    metadata:
+      labels:
+        app: githubaction-aks-blazor
+    spec:
+      containers:
+      - name: githubaction-aks-blazor
+        image: k8workshopdemosss.azurecr.io/blazorwithk8s
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
