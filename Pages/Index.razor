@@ -1,8 +1,11 @@
 ﻿@page "/"
 
 <PageTitle>Index</PageTitle>
+@{
+    string SysName = System.Environment.MachineName;
+}
 
-<h1>Hello, world!</h1>
+<h1>Hello, world! from @SysName</h1> 
 
 Welcome to your new app.
 
